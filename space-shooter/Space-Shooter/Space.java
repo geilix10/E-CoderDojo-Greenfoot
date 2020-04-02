@@ -58,5 +58,6 @@ public class Space extends World
     {
         SpaceWombat spaceWombat = new SpaceWombat();
         addObject(spaceWombat,602,646);
+        addObject(new Score(),120,80);
     }
 }
