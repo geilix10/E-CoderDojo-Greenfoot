@@ -8,7 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Space extends World
 {
-
+    private final int width = 1280;
+    private int timeForAsteroidCreation = 0;
+    public void act(){
+        if(this.timeForAsteroidCreation < 0){
+            int x = Greenfoot.getRandomNumber(1280);
+            addObject(new Asteroid(Greenfoot.getRandomNumber(12)),x, 0);
+            this.timeForAsteroidCreation = 20;
+        }
+        else{
+            this.timeForAsteroidCreation--;
+        }
+        
+    }
+    
     /**
      * Constructor for objects of class Space.
      * 

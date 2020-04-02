@@ -33,6 +33,7 @@ public class SpaceWombat extends Actor
         String key = Greenfoot.getKey();
         if("space".equals(key)){
             getWorld().addObject(new LaserBeam(), getX(), getY());
+            //Greenfoot.playSound("laser.wav");
         }
     }
 }
