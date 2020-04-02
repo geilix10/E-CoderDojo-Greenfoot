@@ -16,6 +16,7 @@ public class SpaceWombat extends Actor
     public void act() 
     {
         basicMovement();
+        shootLaserBeam();
     }
     
     public void basicMovement(){
@@ -25,6 +26,13 @@ public class SpaceWombat extends Actor
         }
         else if(Greenfoot.isKeyDown("right")){
             setLocation(getX()+this.movementSpeed,getY());
+        }
+    }
+    
+    public void shootLaserBeam(){
+        String key = Greenfoot.getKey();
+        if("space".equals(key)){
+            getWorld().addObject(new LaserBeam(), getX(), getY());
         }
     }
 }
