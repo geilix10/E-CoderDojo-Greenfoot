@@ -24,6 +24,7 @@ public class Weapon extends Actor
         if(obstacle != null){
             getWorld().removeObject(obstacle);
             getWorld().removeObject(this);
+            Score.scoreUp();
         }
     }
 }
