@@ -17,6 +17,18 @@ public class Asteroid extends Obstacle
     }
     public void act() 
     {
-        fall();
-    }    
+        if(!tryToDestroyWombat()){
+            fall();
+        }
+    }
+    
+    public boolean tryToDestroyWombat(){
+        Actor wombat = getOneObjectAtOffset(0,0, SpaceWombat.class);
+        if(wombat != null){
+            getWorld().removeObjects(getWorld().getObjects(null));
+            Greenfoot.setWorld(new GameOver());
+            return true;
+        }
+        return false;
+    }
 }
